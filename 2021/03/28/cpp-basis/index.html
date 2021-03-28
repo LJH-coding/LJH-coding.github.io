@@ -1,0 +1,530 @@
+<!DOCTYPE html><html lang="zh-TW" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>C++基礎教學 | LJH-code</title><meta name="keywords" content="C++"><meta name="author" content="LJH-coding"><meta name="copyright" content="LJH-coding"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="基礎架構&#x2F;&#x2F; 使用名稱為iostream的標頭檔，用於資料輸入輸出#include &lt;iostream&gt; using namespace std; &#x2F;&#x2F; 定義名稱為 std 的命名空間int main()&amp;#123; &#x2F;&#x2F; 主程式，程式由此開始執行    cout &lt;&lt; &quot;Hello World!&quot; &lt;&lt; endl; &#x2F;&#x2F; 輸出指令    r">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++基礎教學">
+<meta property="og:url" content="http://example.com/2021/03/28/cpp-basis/index.html">
+<meta property="og:site_name" content="LJH-code">
+<meta property="og:description" content="基礎架構&#x2F;&#x2F; 使用名稱為iostream的標頭檔，用於資料輸入輸出#include &lt;iostream&gt; using namespace std; &#x2F;&#x2F; 定義名稱為 std 的命名空間int main()&amp;#123; &#x2F;&#x2F; 主程式，程式由此開始執行    cout &lt;&lt; &quot;Hello World!&quot; &lt;&lt; endl; &#x2F;&#x2F; 輸出指令    r">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://i.imgur.com/6v5n5dm.jpg">
+<meta property="article:published_time" content="2021-03-28T15:02:35.000Z">
+<meta property="article:modified_time" content="2021-03-28T15:04:49.543Z">
+<meta property="article:author" content="LJH-coding">
+<meta property="article:tag" content="C++">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.imgur.com/6v5n5dm.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2021/03/28/cpp-basis/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '複製成功',
+    error: '複製錯誤',
+    noSupport: '瀏覽器不支援'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '剛剛',
+    min: '分鐘前',
+    hour: '小時前',
+    day: '天前',
+    month: '個月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-03-28 23:04:49'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">載入中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" data-lazy-src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">標籤</div><div class="length-num">2</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分類</div><div class="length-num">2</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 時間軸</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 標籤</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分類</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 關於</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://i.imgur.com/6v5n5dm.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">LJH-code</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 時間軸</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 標籤</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分類</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 關於</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">C++基礎教學</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">發表於</span><time class="post-meta-date-created" datetime="2021-03-28T15:02:35.000Z" title="發表於 2021-03-28 23:02:35">2021-03-28</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新於</span><time class="post-meta-date-updated" datetime="2021-03-28T15:04:49.543Z" title="更新於 2021-03-28 23:04:49">2021-03-28</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="C++基礎教學"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">閱讀量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="基礎架構"><a href="#基礎架構" class="headerlink" title="基礎架構"></a>基礎架構</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 使用名稱為iostream的標頭檔，用於資料輸入輸出</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span> </span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std; <span class="comment">// 定義名稱為 std 的命名空間</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123; <span class="comment">// 主程式，程式由此開始執行</span></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;Hello World!&quot;</span> &lt;&lt; endl; <span class="comment">// 輸出指令</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>; <span class="comment">// 程式結束，可省略</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="標頭檔-Header-files"><a href="#標頭檔-Header-files" class="headerlink" title="標頭檔 Header files"></a>標頭檔 Header files</h2><p>標頭檔能夠引入函式庫中，如 camth, cctype …<br>C++ 使用了 #include 這個指令來載入標頭檔</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//萬用標頭檔</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span> </span></span><br></pre></td></tr></table></figure>
+
+<h2 id="註解-comment"><a href="#註解-comment" class="headerlink" title="註解 comment"></a>註解 comment</h2><p>在程式碼中做適當的註解能使其更容易閱讀</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 這是單行註解</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    這是多行註解</span></span><br><span class="line"><span class="comment">    可以換行</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="縮排-Indent"><a href="#縮排-Indent" class="headerlink" title="縮排 Indent"></a>縮排 Indent</h2><p>我們可以用 TAB 鍵來進行縮排<br>增加程式碼的可讀性<br>如果只有單行敘述句則可以省略大括號</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 未縮排</span></span><br><span class="line"><span class="keyword">while</span>(<span class="number">1</span>)&#123;cout &lt;&lt; <span class="number">12</span> &lt;&lt; endl;&#125;</span><br><span class="line"><span class="comment">// 縮排後</span></span><br><span class="line"><span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">    cout &lt;&lt; <span class="number">12</span> &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 省略</span></span><br><span class="line"><span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">    cout &lt;&lt; <span class="number">12</span> &lt;&lt; endl;</span><br></pre></td></tr></table></figure>
+
+<h2 id="敘述句"><a href="#敘述句" class="headerlink" title="敘述句"></a>敘述句</h2><p>敘述句以分號 ; 隔開</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> a;</span><br><span class="line">a=<span class="number">5</span>;</span><br><span class="line">cout &lt;&lt; a &lt;&lt; endl;</span><br></pre></td></tr></table></figure>
+
+<h2 id="區塊-Block"><a href="#區塊-Block" class="headerlink" title="區塊 Block"></a>區塊 Block</h2><p>C++用大括號 { } 來表示一個區塊<br>通常加在函式、條件句後</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// while</span></span><br><span class="line"><span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;Hello&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// if</span></span><br><span class="line"><span class="keyword">if</span>(a&gt;<span class="number">0</span>)&#123;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;Hey&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line">    </span><br><span class="line"><span class="comment">// 建立函式</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">func</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a+b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="輸入輸出-input-amp-output"><a href="#輸入輸出-input-amp-output" class="headerlink" title="輸入輸出 input &amp; output"></a>輸入輸出 input &amp; output</h2><p>在C++中，我們使用 cin 和 cout 以在終端機獲取和輸出資料<br>&lt;&lt; 和 &gt;&gt; 代表資料流方向</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> a; <span class="comment">// 宣告變數 a</span></span><br><span class="line">cin &gt;&gt; a; <span class="comment">//輸入 a</span></span><br><span class="line">cout &lt;&lt; a+<span class="number">1</span>; <span class="comment">//輸出a+1</span></span><br><span class="line"><span class="comment">// input: 5  </span></span><br><span class="line"><span class="comment">// output: 6</span></span><br></pre></td></tr></table></figure>
+
+<p>我們還能使用多個 &lt;&lt; 或 &gt;&gt; 來輸入輸出多個資料</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> a, b; <span class="comment">// 宣告變數 a b</span></span><br><span class="line">cin &gt;&gt; a &gt;&gt; b; </span><br><span class="line"></span><br><span class="line">cout &lt;&lt; <span class="string">&quot;總合為: &quot;</span> &lt;&lt; a+b &lt;&lt; endl; <span class="comment">// 輸出 a+b</span></span><br><span class="line"><span class="comment">// input: 2 3</span></span><br><span class="line"><span class="comment">// output: 總合為: 5</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="習題"><a href="#習題" class="headerlink" title="習題"></a>習題</h2><p><a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=d483">zerojudge d483</a><br><a target="_blank" rel="noopener" href="http://cjoj.cjhs.kh.edu.tw/problem/1003">CJOJ 1003</a></p>
+<h1 id="命名規則"><a href="#命名規則" class="headerlink" title="命名規則"></a>命名規則</h1><p>C++的變數名稱遵守著一定的規則<br>當名稱和關鍵字(keyword)重複或不合法時，會造成無法編譯的錯誤</p>
+<ul>
+<li>變數名稱的第一個字不可為數字( 0~9 )或符號( @ , &amp; , # … )但可為底線( _ )</li>
+<li>變數名稱不可使用中文</li>
+<li>英文字母的大小寫不同，代表的東西也不同，因此我們可以利用此特性來避開關鍵字的使用</li>
+</ul>
+<h2 id="常數-CONSTANT"><a href="#常數-CONSTANT" class="headerlink" title="常數 CONSTANT"></a>常數 CONSTANT</h2><p>常數在程式中為固定不變的數，無法更改其初始值<br>我們可以使用 #define 和 const 來定義或宣告一個常數</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Pi 3.14159</span></span><br><span class="line"><span class="comment">// #define 可以用來定義一個字詞，當那個詞被編譯時，會被轉換成所定義的程式碼</span></span><br><span class="line"><span class="comment">// Pi 常數名稱 </span></span><br><span class="line"><span class="comment">// 3.14159 常數初始值</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> Pi <span class="number">3.14159</span></span><br><span class="line"><span class="comment">// const 宣告這個數為常數</span></span><br><span class="line"><span class="comment">// double 常數型態，不可省略</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="資料型態-DATA-TYPE"><a href="#資料型態-DATA-TYPE" class="headerlink" title="資料型態 DATA TYPE"></a>資料型態 DATA TYPE</h2><table>
+<thead>
+<tr>
+<th>資料型態</th>
+<th>中文意義</th>
+<th>位元組(byte)</th>
+<th>範圍</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>short</td>
+<td>短整數</td>
+<td>2</td>
+<td>-32768 ~ 32767</td>
+</tr>
+<tr>
+<td>int</td>
+<td>整數</td>
+<td>4</td>
+<td>-2,147,483,648 ~ 2,147,483,647</td>
+</tr>
+<tr>
+<td>long long int</td>
+<td>長整數</td>
+<td>8</td>
+<td>-9.22x1018 ~ 9.22x1018</td>
+</tr>
+<tr>
+<td>char</td>
+<td>字元</td>
+<td>4</td>
+<td>0 ~ 255</td>
+</tr>
+<tr>
+<td>bool</td>
+<td>布林值</td>
+<td>1</td>
+<td>false 或 true (0 或 1)</td>
+</tr>
+<tr>
+<td>float</td>
+<td>浮點數</td>
+<td>4</td>
+<td>1.17x10-38 ~ 3.4x10-38</td>
+</tr>
+<tr>
+<td>double</td>
+<td>倍浮點數</td>
+<td>8</td>
+<td>2.25x10-308 ~ 1.79x10-308</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>浮點數的有效位數至小數點後第7位，而倍浮點數的有效位數至小數點後第15位</p>
+</blockquote>
+<h2 id="有號無號-SIGNED-amp-UNSIGNED"><a href="#有號無號-SIGNED-amp-UNSIGNED" class="headerlink" title="有號無號 SIGNED &amp; UNSIGNED"></a>有號無號 SIGNED &amp; UNSIGNED</h2><p>型態可以分成 有號 ( signed ) 和 無號 ( unsigned ) 兩種<br>預設值為有號</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> a; <span class="comment">// 有號整數 -32768 ~ 32767</span></span><br><span class="line"><span class="keyword">unsigned</span> <span class="keyword">int</span> b <span class="comment">//無號整數 0 ~ 65535</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="溢位-OVERFLOW"><a href="#溢位-OVERFLOW" class="headerlink" title="溢位 OVERFLOW"></a>溢位 OVERFLOW</h2><p>如果指定給變數的值超過變數型態的範圍，將會發生溢位的錯誤</p>
+<blockquote>
+<p>編譯器不會對可能會溢位的程式碼發出警告</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">short</span> a = <span class="number">32768</span>; <span class="comment">// 範圍: -32768 ~ 32767</span></span><br><span class="line">cout &lt;&lt; a &lt;&lt; endl; <span class="comment">// output: -32768</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="跳脫字元-ESCAPE-CHARACTER"><a href="#跳脫字元-ESCAPE-CHARACTER" class="headerlink" title="跳脫字元 ESCAPE CHARACTER"></a>跳脫字元 ESCAPE CHARACTER</h2><p>在反斜線 \ 後加上字元<br>用於對電腦的命令或表示不可列印的字元</p>
+<table>
+<thead>
+<tr>
+<th>跳脫字元</th>
+<th>結果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>\a</td>
+<td>讓蜂鳴器發出嗶聲 ( alarm )</td>
+</tr>
+<tr>
+<td>\b</td>
+<td>退後一格 ( backspace )</td>
+</tr>
+<tr>
+<td>\f</td>
+<td>換頁 ( form feed )</td>
+</tr>
+<tr>
+<td>\n</td>
+<td>換行 ( line feed )</td>
+</tr>
+<tr>
+<td>\r</td>
+<td>歸位 ( carriage return )</td>
+</tr>
+<tr>
+<td>\t</td>
+<td>水平制表 ( horizontal tab )</td>
+</tr>
+<tr>
+<td>\v</td>
+<td>垂直製表 ( vertical tab )</td>
+</tr>
+<tr>
+<td>\‘</td>
+<td>顯示單引號 ’</td>
+</tr>
+<tr>
+<td>\“</td>
+<td>顯示雙引號 “</td>
+</tr>
+<tr>
+<td>\\</td>
+<td>顯示反斜線 \</td>
+</tr>
+</tbody></table>
+<h2 id="資料型態轉換"><a href="#資料型態轉換" class="headerlink" title="資料型態轉換"></a>資料型態轉換</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">double</span> a = <span class="number">1.23</span>;</span><br><span class="line"><span class="keyword">int</span> b = a; <span class="comment">// 1.23 --&gt;  1 (無條件捨去)</span></span><br><span class="line">cout &lt;&lt; (<span class="keyword">int</span>)a; <span class="comment">//強制轉換型態 浮點數 --&gt; 整數</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> p = <span class="number">2</span>;</span><br><span class="line"><span class="keyword">double</span> q = <span class="number">1.2</span>;</span><br><span class="line">cout &lt;&lt; p+q; <span class="comment">// 3.2</span></span><br><span class="line"><span class="comment">// 先把 p 轉換成 double，再與 q 相加</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>大型態轉換至小型態時將會失去原本的精度<br>編譯器進行不同型態的運算時會先把精度小的數字轉換成精度大的</p>
+</blockquote>
+<h2 id="習題-1"><a href="#習題-1" class="headerlink" title="習題"></a>習題</h2><p><a target="_blank" rel="noopener" href="http://cjoj.cjhs.kh.edu.tw/problem/1002">CJOJ 1002</a></p>
+<h1 id="運算子"><a href="#運算子" class="headerlink" title="運算子"></a>運算子</h1><p>在程式中，我們能使用運算元和運算子來進行算數運算、邏輯判斷…等<br>其中運算元可以是常數、變數、數字或是有回傳值的函式<br>我們將運算元和運算子的組合稱為運算式</p>
+<h2 id="算數運算子"><a href="#算數運算子" class="headerlink" title="算數運算子"></a>算數運算子</h2><table>
+<thead>
+<tr>
+<th>運算子</th>
+<th>功能</th>
+<th>用法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>+</td>
+<td>加</td>
+<td>a + b</td>
+</tr>
+<tr>
+<td>-</td>
+<td>減</td>
+<td>a - b</td>
+</tr>
+<tr>
+<td>*</td>
+<td>乘</td>
+<td>a * b</td>
+</tr>
+<tr>
+<td>/</td>
+<td>除</td>
+<td>a / b</td>
+</tr>
+<tr>
+<td>%</td>
+<td>取餘數</td>
+<td>a % b</td>
+</tr>
+<tr>
+<td>++</td>
+<td>遞增</td>
+<td>a++</td>
+</tr>
+<tr>
+<td>–</td>
+<td>遞減</td>
+<td>b–</td>
+</tr>
+</tbody></table>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> a=<span class="number">13</span>;</span><br><span class="line"><span class="keyword">int</span> b=<span class="number">5</span>;</span><br><span class="line">cout &lt;&lt; a + b; <span class="comment">// 18</span></span><br><span class="line">cout &lt;&lt; a - b; <span class="comment">// 8</span></span><br><span class="line">cout &lt;&lt; a * b; <span class="comment">// 65</span></span><br><span class="line">cout &lt;&lt; a / b; <span class="comment">// 2</span></span><br><span class="line">cout &lt;&lt; a % b; <span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
+
+<p>遞增和遞減根據位置的不同而有不同的結果</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> a=<span class="number">2</span>;</span><br><span class="line">cout &lt;&lt; a++; <span class="comment">// 2</span></span><br><span class="line">cout &lt;&lt; a; <span class="comment">// 3</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> b=<span class="number">2</span>;</span><br><span class="line">cout &lt;&lt; ++b; <span class="comment">//3</span></span><br><span class="line">cout &lt;&lt; b; <span class="comment">//3</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>當 ++ 或 – 在前面時，本身會先加 1 後再進行運算<br>而當 ++ 或 – 在後面時，進行運算後本身才加上 1</p>
+</blockquote>
+<h2 id="複合指定運算子"><a href="#複合指定運算子" class="headerlink" title="複合指定運算子"></a>複合指定運算子</h2><p>我們用等號 (指定運算子) = 來指定變數的值<br>而 指定運算子 搭配 算術運算子 後形成 複合指定運算子</p>
+<table>
+<thead>
+<tr>
+<th>運算子</th>
+<th>用法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>+=</td>
+<td>a+=b</td>
+</tr>
+<tr>
+<td>-=</td>
+<td>a-=b</td>
+</tr>
+<tr>
+<td>*=</td>
+<td>a*=b</td>
+</tr>
+<tr>
+<td>/=</td>
+<td>a/=b</td>
+</tr>
+<tr>
+<td>%=</td>
+<td>a%=b</td>
+</tr>
+</tbody></table>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> a=<span class="number">5</span>;</span><br><span class="line">a+=<span class="number">3</span>; <span class="comment">// a=a+3 將 a 的值加上 3 之後再指定給 a  ∴ a = 5 + 3 = 8</span></span><br><span class="line">a-=<span class="number">2</span>; <span class="comment">// a=a-2 同理，將 a 的值減去 2 之後再指定給 a  ∴ a = 8 - 2 = 6</span></span><br><span class="line">a*=<span class="number">4</span>; <span class="comment">// a=a*4  ∴ a = 6 * 4 =24</span></span><br><span class="line">a/=<span class="number">3</span>; <span class="comment">// a=a/3 ∴ a = 24 / 3 = 8</span></span><br><span class="line">a%=<span class="number">7</span>; <span class="comment">// a=a%7 ∴ a = 8 % 7 = 1</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="關係運算子"><a href="#關係運算子" class="headerlink" title="關係運算子"></a>關係運算子</h2><p>我們能用下列運算子來進行條件的判斷：</p>
+<table>
+<thead>
+<tr>
+<th>運算子</th>
+<th>功能</th>
+<th>用法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&gt;</td>
+<td>大於</td>
+<td>a&gt;b</td>
+</tr>
+<tr>
+<td>&lt;</td>
+<td>小於</td>
+<td>a&lt;b</td>
+</tr>
+<tr>
+<td>==</td>
+<td>等於</td>
+<td>a==b</td>
+</tr>
+<tr>
+<td>&gt;=</td>
+<td>大於等於</td>
+<td>a&gt;=b</td>
+</tr>
+<tr>
+<td>&lt;=</td>
+<td>小於等於</td>
+<td>a&lt;=b</td>
+</tr>
+<tr>
+<td>!=</td>
+<td>不等於</td>
+<td>a!=b</td>
+</tr>
+</tbody></table>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> a=<span class="number">3</span>, b=<span class="number">5</span>, c=<span class="number">7</span>;</span><br><span class="line">cout &lt;&lt; (a&gt;b); <span class="comment">// false</span></span><br><span class="line">cout &lt;&lt; (b==<span class="number">5</span>); <span class="comment">// true</span></span><br><span class="line">cout &lt;&lt; (c&gt;=<span class="number">7</span>); <span class="comment">// true</span></span><br><span class="line">cout &lt;&lt; (a!=<span class="number">2</span>); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="邏輯運算子"><a href="#邏輯運算子" class="headerlink" title="邏輯運算子"></a>邏輯運算子</h2><p>我們能使用邏輯運算子能進行邏輯的判斷</p>
+<table>
+<thead>
+<tr>
+<th>運算子</th>
+<th>功能</th>
+<th>用法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&amp;&amp;</td>
+<td>且 (交集)</td>
+<td>A &amp;&amp; B</td>
+</tr>
+<tr>
+<td>||</td>
+<td>或 (聯集)</td>
+<td>A || B</td>
+</tr>
+<tr>
+<td>!</td>
+<td>不等於</td>
+<td>!A</td>
+</tr>
+</tbody></table>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> a=<span class="number">3</span>, b=<span class="number">5</span>, c=<span class="number">7</span>;</span><br><span class="line">cout &lt;&lt; (a&gt;<span class="number">2</span> &amp;&amp; c&lt;<span class="number">6</span>); <span class="comment">// false</span></span><br><span class="line">cout &lt;&lt; (b==<span class="number">5</span> || a&gt;<span class="number">4</span>) <span class="comment">// true</span></span><br><span class="line">cout &lt;&lt; !(a&gt;=<span class="number">3</span> &amp;&amp; c&lt;=<span class="number">8</span>) <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>A &amp;&amp; B ，當A和B皆為 True 時，結果為 True，其餘皆為 False<br>A || B ，當A和B皆為 False 時，結果為 False，其餘皆為 True</p>
+</blockquote>
+<h2 id="條件運算子"><a href="#條件運算子" class="headerlink" title="條件運算子"></a>條件運算子</h2><p>條件運算子 又稱為 三元運算子，其傳回值依條件式的結果而定<br>如果條件式的結果為 True，則回傳冒號前的值，若結果為 False，則回傳冒號 : 後的值</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> a=<span class="number">5</span>, b=<span class="number">9</span>;</span><br><span class="line">cout &lt;&lt; (a&gt;b ? <span class="string">&quot;yes&quot;</span> : <span class="string">&quot;no&quot;</span>); <span class="comment">// no</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="條件判斷與迴圈"><a href="#條件判斷與迴圈" class="headerlink" title="條件判斷與迴圈"></a>條件判斷與迴圈</h1><h2 id="條件判斷"><a href="#條件判斷" class="headerlink" title="條件判斷"></a>條件判斷</h2><h3 id="IF"><a href="#IF" class="headerlink" title="IF"></a>IF</h3><p>當 if 的判斷條件為 True 時，將會執行 if 區塊內的敘述<br>若結果為 False ，則跳過此區塊</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> a=<span class="number">7</span>, b=<span class="number">9</span>;</span><br><span class="line"><span class="keyword">if</span>(a&gt;b)&#123; <span class="comment">// False</span></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;Hello&quot;</span> &lt;&lt; endl; <span class="comment">// 跳過 if 區塊內的敘述</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span>(b&gt;<span class="number">5</span>)&#123; <span class="comment">// True</span></span><br><span class="line">    a+=b; <span class="comment">// a=a+b ∴a=16</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="IF-…-ELSE"><a href="#IF-…-ELSE" class="headerlink" title="IF … ELSE"></a>IF … ELSE</h3><p>當 if 的判斷條件為 True 時，將會執行 if 區塊內的敘述<br>若結果為 False ，則執行 else 區塊內的敘述</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> a=<span class="number">5</span>, b=<span class="number">7</span>;</span><br><span class="line"><span class="keyword">if</span>(a&gt;b)&#123; <span class="comment">// False</span></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;OK&quot;</span> &lt;&lt; endl;</span><br><span class="line">    <span class="comment">// 跳過 if 區塊內的敘述</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span>&#123; <span class="comment">// 當 if 條件結果為 False</span></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;NO&quot;</span> &lt;&lt; endl; <span class="comment">// NO</span></span><br><span class="line">    <span class="comment">// 執行 else 區塊內的敘述</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="ELSE-IF"><a href="#ELSE-IF" class="headerlink" title="ELSE IF"></a>ELSE IF</h3><p>else if 可以放在 if 和 else 中間，用以判斷其他條件</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> a=<span class="number">5</span>, b=<span class="number">7</span>;</span><br><span class="line"><span class="keyword">if</span>(a&gt;b)&#123; <span class="comment">// False</span></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;Perfect&quot;</span> &lt;&lt; endl;</span><br><span class="line">    <span class="comment">// 跳過此區塊內的敘述，進入 else if 的區塊 </span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(a&lt;<span class="number">4</span>)&#123; <span class="comment">// False</span></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;fabulous&quot;</span> &lt;&lt; endl;</span><br><span class="line">    <span class="comment">// 跳過此區塊內的敘述 </span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(b&gt;<span class="number">5</span>)&#123; <span class="comment">// True</span></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;Nice&quot;</span> &lt;&lt; endl; <span class="comment">// Nice</span></span><br><span class="line">    <span class="comment">// 當上面區塊的條件結果為 False 且自己的條件結果為 True</span></span><br><span class="line">    <span class="comment">// 跳出流程判斷</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span>&#123;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;Good&quot;</span> &lt;&lt; endl;</span><br><span class="line">    <span class="comment">// 不會執行到此區塊</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>else if 的數量可以根據自己所需增加數量</p>
+</blockquote>
+<h3 id="SWITCH"><a href="#SWITCH" class="headerlink" title="SWITCH"></a>SWITCH</h3><p>switch 可以用來判斷單一條件<br>在條件式數量多的情況下，能使程式碼變得相對簡潔</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> a=<span class="number">10</span>;</span><br><span class="line"><span class="built_in"><span class="keyword">switch</span></span>(a/<span class="number">3</span>)&#123; <span class="comment">// a/3 是switch的條件句</span></span><br><span class="line">    <span class="comment">// 如果 a/3 和 case 後的數字或字元相等，則執行此case區塊的敘述</span></span><br><span class="line">    <span class="keyword">case</span> <span class="number">2</span>: <span class="comment">// a/3 != 2   False</span></span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;Red&quot;</span> &lt;&lt; endl;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">3</span>: <span class="comment">// a/3 == 3 結果為 True ，進入敘述</span></span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;Green&quot;</span> &lt;&lt; endl; <span class="comment">// Green</span></span><br><span class="line">        <span class="keyword">break</span>; <span class="comment">// 跳出 switch 的判斷流程</span></span><br><span class="line">    <span class="keyword">case</span> <span class="number">4</span>: <span class="comment">// 此 case 區塊不會被執行</span></span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;Blue&quot;</span> &lt;&lt; endl;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">default</span>: <span class="comment">// 若上面所有 case 皆不符合，則執行 default 區塊的敘述</span></span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;Color&quot;</span> &lt;&lt; endl;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>case 後面必須加上冒號，而不是大括號<br>case 的敘述結束後，需要加上 break ，跳出 switch，否則會繼續向下執行另一個 case</p>
+</blockquote>
+<h2 id="迴圈"><a href="#迴圈" class="headerlink" title="迴圈"></a>迴圈</h2><h3 id="FOR"><a href="#FOR" class="headerlink" title="FOR"></a>FOR</h3><p>for 迴圈必須事先指定變數的初始值、結束條件及每執行一次變數的增減值</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)&#123;</span><br><span class="line">    <span class="comment">// Code</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>int i=0 :</code> 指定變數初始值<br><code>i&lt;10 :</code> 結束條件，當 i 等於 10 時，跳出迴圈<br><code>i++ :</code> 控制變數增減，每跑一次迴圈就執行一次</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">5</span>;i++)&#123;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;i=&quot;</span> &lt;&lt; i &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* </span></span><br><span class="line"><span class="comment">    當 i=0 ，判斷 i&lt;5 為 True ，輸出 i=0 ， i 加 1</span></span><br><span class="line"><span class="comment">    當 i=1 ，判斷 i&lt;5 為 True ，輸出 i=1 ， i 加 1</span></span><br><span class="line"><span class="comment">    當 i=2 ，判斷 i&lt;5 為 True ，輸出 i=2 ， i 加 1</span></span><br><span class="line"><span class="comment">    當 i=3 ，判斷 i&lt;5 為 True ，輸出 i=3 ， i 加 1</span></span><br><span class="line"><span class="comment">    當 i=4 ，判斷 i&lt;5 為 True ，輸出 i=4 ， i 加 1</span></span><br><span class="line"><span class="comment">    當 i=5 ，判斷 i&lt;5 為 False ，跳出迴圈</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="WHILE"><a href="#WHILE" class="headerlink" title="WHILE"></a>WHILE</h3><p>當 while 迴圈的條件句為 True 時，便會重複執行下去<br>我們可以在 while 迴圈中加入變數，進行迴圈次數的控制</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> a=<span class="number">5</span>;</span><br><span class="line"><span class="keyword">while</span>(a&gt;<span class="number">0</span>)&#123; <span class="comment">// while 的條件句， 當結果為 False， 跳出迴圈</span></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;a=&quot;</span> &lt;&lt; a &lt;&lt; endl;</span><br><span class="line">    a--;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    當 a=5 ，判斷 a&gt;0 為 True，輸出 a=5 ，a減1 </span></span><br><span class="line"><span class="comment">    當 a=4 ，判斷 a&gt;0 為 True，輸出 a=4 ，a減1</span></span><br><span class="line"><span class="comment">    當 a=3 ，判斷 a&gt;0 為 True，輸出 a=3 ，a減1</span></span><br><span class="line"><span class="comment">    當 a=2 ，判斷 a&gt;0 為 True，輸出 a=2 ，a減1</span></span><br><span class="line"><span class="comment">    當 a=1 ，判斷 a&gt;0 為 True，輸出 a=1 ，a減1 </span></span><br><span class="line"><span class="comment">    當 a=0 ，判斷 a&gt;0 為 False，跳出迴圈</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="DO-…-WHILE"><a href="#DO-…-WHILE" class="headerlink" title="DO … WHILE"></a>DO … WHILE</h3><p>我們可以使用 do … while 來使我們的程式碼至少被執行一次</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> i=<span class="number">1</span></span><br><span class="line"><span class="keyword">do</span>&#123;</span><br><span class="line">    <span class="comment">// 進來迴圈時，先不進行條件判斷</span></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;Only one&quot;</span> &lt;&lt; endl; </span><br><span class="line">    i--;</span><br><span class="line">&#125;<span class="keyword">while</span>(i&gt;<span class="number">0</span>); <span class="comment">// 如果條件句為 True ，再次進入迴圈，否則跳出迴圈</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="迴圈控制指令"><a href="#迴圈控制指令" class="headerlink" title="迴圈控制指令"></a>迴圈控制指令</h3><p>我們可以藉由迴圈控制指令，使的迴圈直接進入下一次的迴圈或結束<br>常見的指令有 break 、 continue</p>
+<h4 id="CONTINUE"><a href="#CONTINUE" class="headerlink" title="CONTINUE"></a>CONTINUE</h4><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;<span class="number">11</span>;i++)&#123; <span class="comment">// 從 i=1 執行到 i=10</span></span><br><span class="line">    <span class="keyword">if</span>(i%<span class="number">2</span>==<span class="number">0</span>) <span class="comment">//如果i整除2</span></span><br><span class="line">        <span class="keyword">continue</span>; <span class="comment">// 進入下一次迴圈</span></span><br><span class="line">    <span class="comment">// 只有當 i 不被 2 整除才會被輸出</span></span><br><span class="line">    cout &lt;&lt; i &lt;&lt; <span class="string">&quot; &quot;</span>; <span class="comment">// 1 3 5 7 9</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="BREAK"><a href="#BREAK" class="headerlink" title="BREAK"></a>BREAK</h4><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;<span class="number">11</span>;i++)&#123; <span class="comment">// 從 i=1 執行到 i=10</span></span><br><span class="line">    <span class="keyword">if</span>(i%<span class="number">2</span>==<span class="number">0</span>) <span class="comment">//如果i整除2</span></span><br><span class="line">        <span class="keyword">continue</span>; <span class="comment">// 進入下一次迴圈</span></span><br><span class="line">    <span class="comment">// 只有當 i 不被 2 整除才會被輸出</span></span><br><span class="line">    cout &lt;&lt; i &lt;&lt; <span class="string">&quot; &quot;</span>; <span class="comment">// 1 3 5 7 9</span></span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="習題-2"><a href="#習題-2" class="headerlink" title="習題"></a>習題</h2><p><a target="_blank" rel="noopener" href="http://cjoj.cjhs.kh.edu.tw/problem/1001">CJOJ 1001</a><br><a target="_blank" rel="noopener" href="http://cjoj.cjhs.kh.edu.tw/problem/1004">CJOJ 1004</a><br><a target="_blank" rel="noopener" href="http://cjoj.cjhs.kh.edu.tw/problem/1005">CJOJ 1005</a><br><a target="_blank" rel="noopener" href="http://cjoj.cjhs.kh.edu.tw/problem/1007">CJOJ 1007</a><br><a target="_blank" rel="noopener" href="http://cjoj.cjhs.kh.edu.tw/problem/1008">CJOJ 1008</a><br><a target="_blank" rel="noopener" href="http://cjoj.cjhs.kh.edu.tw/problem/1021">CJOJ 1021</a></p>
+<h1 id="陣列"><a href="#陣列" class="headerlink" title="陣列"></a>陣列</h1><h2 id="一維陣列"><a href="#一維陣列" class="headerlink" title="一維陣列"></a>一維陣列</h2><p>陣列是由許多相同型態的變數所串連而成的<br>我們可以將陣列想成各自有不同編號的收納盒</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://i.imgur.com/8WA1DGe.png"></p>
+<p>第一格的編號為 0 ，第二格的編號為 1 … 以此類推</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 宣告陣列</span></span><br><span class="line"><span class="keyword">int</span> arr[<span class="number">3</span>]=&#123;<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>&#125;</span><br><span class="line"><span class="comment">// 資料型態 陣列名稱[陣列大小]=&#123;初始值0,初始值1,...&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 取得存在陣列中的值</span></span><br><span class="line">arr[<span class="number">1</span>] <span class="comment">// 5</span></span><br><span class="line"><span class="comment">// 陣列名稱[索引值]</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<ol>
+<li>陣列的大小是固定不變的</li>
+<li>如果陣列的大小超過記憶體的大小，將會發生錯誤<br>這時可以試著在 main 的區塊外宣告陣列</li>
+<li>宣告陣列時不一定要給予初始值<br>不過我們可以將陣列中所有值初始化為 0<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> array[<span class="number">10</span>]=&#123;<span class="number">0</span>&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+</blockquote>
+<h2 id="二維陣列"><a href="#二維陣列" class="headerlink" title="二維陣列"></a>二維陣列</h2><p>我們可以把二維陣列想像成一個平面的收納盒</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://i.imgur.com/NoaLaYt.png"></p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> array2D[<span class="number">3</span>][<span class="number">3</span>]=&#123;&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;,&#123;<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>&#125;,&#123;<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>&#125;&#125;;</span><br><span class="line">cout &lt;&lt; array2D[<span class="number">1</span>][<span class="number">0</span>] + array2D[<span class="number">2</span>][<span class="number">2</span>] + array2D[<span class="number">0</span>][<span class="number">2</span>] &lt;&lt; endl; <span class="comment">// 16</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    1 2 3</span></span><br><span class="line"><span class="comment">    4 5 6</span></span><br><span class="line"><span class="comment">    7 8 9</span></span><br><span class="line"><span class="comment">    </span></span><br><span class="line"><span class="comment">    array2D[1][0] → 第 2 列 第 1 行 → 4</span></span><br><span class="line"><span class="comment">    array2D[2][2] → 第 3 列 第 3 行 → 9</span></span><br><span class="line"><span class="comment">    array2D[0][2] → 第 1 列 第 3 行 → 3</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="訪問陣列"><a href="#訪問陣列" class="headerlink" title="訪問陣列"></a>訪問陣列</h2><p>我們能利用迴圈來訪問陣列</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> array[<span class="number">3</span>]=&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;; <span class="comment">// 宣告陣列</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">3</span>;i++)&#123; <span class="comment">// 從 i=0 到 i=2</span></span><br><span class="line">    cout &lt;&lt; array[i] &lt;&lt; endl; <span class="comment">//輸出索引值為 i 的值</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> inputArray[<span class="number">5</span>]; <span class="comment">// 宣告一個空陣列</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">5</span>;i++)&#123; <span class="comment">// 從 i=0 到 i=5</span></span><br><span class="line">    cin &gt;&gt; inputArray[i]; <span class="comment">// 讓使用者輸入陣列的值</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> array2d[<span class="number">3</span>][<span class="number">3</span>]=&#123;&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;,&#123;<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>&#125;,&#123;<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>&#125;&#125;;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">3</span>;i++)&#123; <span class="comment">// 從 i=0 到 i=2</span></span><br><span class="line">    <span class="comment">// 記得相同區塊內不能有名稱相同的變數</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;<span class="number">3</span>;j++)&#123; <span class="comment">// 從 j=0 到 j=2</span></span><br><span class="line">        array2d[i][j]+=<span class="number">2</span>; <span class="comment">// 全部加2</span></span><br><span class="line">        <span class="comment">// &#123;&#123;3,4,5&#125;,&#123;6,7,8&#125;,&#123;9,10,11&#125;&#125;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* </span></span><br><span class="line"><span class="comment">    訪問順序: </span></span><br><span class="line"><span class="comment">    array2d[0][0] =&gt; array2d[0][1] =&gt; array2d[0][2] =&gt;</span></span><br><span class="line"><span class="comment">    array2d[1][0] =&gt; array2d[1][1] =&gt; array2d[1][2] =&gt;</span></span><br><span class="line"><span class="comment">    array2d[2][0] =&gt; array2d[2][1] =&gt; array2d[2][2]</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="氣泡排序法-概念"><a href="#氣泡排序法-概念" class="headerlink" title="氣泡排序法 - 概念"></a>氣泡排序法 - 概念</h2><p>從陣列的開頭不斷的比較兩個數字<br>如果前面的數字比較大，則兩者交換，反之則不交換<br>第一次要檢查<code>陣列長度-1</code>次，隨後每次檢查的次數會減1，直到完成排序</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://i.imgur.com/NyD1hI4.png"></p>
+<blockquote>
+<p>C++的函式庫中有內建排序函數 sort()：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> arr[<span class="number">3</span>]=&#123;<span class="number">2</span>,<span class="number">3</span>,<span class="number">1</span>&#125;</span><br><span class="line"><span class="built_in">sort</span>(arr, arr+<span class="number">3</span>); <span class="comment">// &#123;1,2,3&#125;</span></span><br></pre></td></tr></table></figure>
+</blockquote>
+<h2 id="練習題"><a href="#練習題" class="headerlink" title="練習題"></a>練習題</h2><p><a target="_blank" rel="noopener" href="http://cjoj.cjhs.kh.edu.tw/problem/1019">CJOJ</a><br><a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=c067">zerojudge c067</a></p>
+</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/C/">C++</a></div><div class="post_share"><div class="social-share" data-image="https://i.imgur.com/6v5n5dm.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2021/03/28/%E6%8B%89%E5%A1%9E%E7%A6%8F%E6%95%A3%E5%B0%84/"><img class="next-cover" data-lazy-src="https://i.imgur.com/4jjqB7L.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">拉塞福散射</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" data-lazy-src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">LJH-coding</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">標籤</div><div class="length-num">2</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分類</div><div class="length-num">2</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/LJH-coding"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/LJH-coding" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:frankleeplayminecraft58@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目錄</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9F%BA%E7%A4%8E%E6%9E%B6%E6%A7%8B"><span class="toc-number">1.</span> <span class="toc-text">基礎架構</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%99%E9%A0%AD%E6%AA%94-Header-files"><span class="toc-number">1.1.</span> <span class="toc-text">標頭檔 Header files</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A8%BB%E8%A7%A3-comment"><span class="toc-number">1.2.</span> <span class="toc-text">註解 comment</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B8%AE%E6%8E%92-Indent"><span class="toc-number">1.3.</span> <span class="toc-text">縮排 Indent</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%98%E8%BF%B0%E5%8F%A5"><span class="toc-number">1.4.</span> <span class="toc-text">敘述句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%80%E5%A1%8A-Block"><span class="toc-number">1.5.</span> <span class="toc-text">區塊 Block</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BC%B8%E5%85%A5%E8%BC%B8%E5%87%BA-input-amp-output"><span class="toc-number">1.6.</span> <span class="toc-text">輸入輸出 input &amp; output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BF%92%E9%A1%8C"><span class="toc-number">1.7.</span> <span class="toc-text">習題</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%91%BD%E5%90%8D%E8%A6%8F%E5%89%87"><span class="toc-number">2.</span> <span class="toc-text">命名規則</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E6%95%B8-CONSTANT"><span class="toc-number">2.1.</span> <span class="toc-text">常數 CONSTANT</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B3%87%E6%96%99%E5%9E%8B%E6%85%8B-DATA-TYPE"><span class="toc-number">2.2.</span> <span class="toc-text">資料型態 DATA TYPE</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%89%E8%99%9F%E7%84%A1%E8%99%9F-SIGNED-amp-UNSIGNED"><span class="toc-number">2.3.</span> <span class="toc-text">有號無號 SIGNED &amp; UNSIGNED</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BA%A2%E4%BD%8D-OVERFLOW"><span class="toc-number">2.4.</span> <span class="toc-text">溢位 OVERFLOW</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B7%B3%E8%84%AB%E5%AD%97%E5%85%83-ESCAPE-CHARACTER"><span class="toc-number">2.5.</span> <span class="toc-text">跳脫字元 ESCAPE CHARACTER</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B3%87%E6%96%99%E5%9E%8B%E6%85%8B%E8%BD%89%E6%8F%9B"><span class="toc-number">2.6.</span> <span class="toc-text">資料型態轉換</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BF%92%E9%A1%8C-1"><span class="toc-number">2.7.</span> <span class="toc-text">習題</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%81%8B%E7%AE%97%E5%AD%90"><span class="toc-number">3.</span> <span class="toc-text">運算子</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%97%E6%95%B8%E9%81%8B%E7%AE%97%E5%AD%90"><span class="toc-number">3.1.</span> <span class="toc-text">算數運算子</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A4%87%E5%90%88%E6%8C%87%E5%AE%9A%E9%81%8B%E7%AE%97%E5%AD%90"><span class="toc-number">3.2.</span> <span class="toc-text">複合指定運算子</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%9C%E4%BF%82%E9%81%8B%E7%AE%97%E5%AD%90"><span class="toc-number">3.3.</span> <span class="toc-text">關係運算子</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%82%8F%E8%BC%AF%E9%81%8B%E7%AE%97%E5%AD%90"><span class="toc-number">3.4.</span> <span class="toc-text">邏輯運算子</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A2%9D%E4%BB%B6%E9%81%8B%E7%AE%97%E5%AD%90"><span class="toc-number">3.5.</span> <span class="toc-text">條件運算子</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A2%9D%E4%BB%B6%E5%88%A4%E6%96%B7%E8%88%87%E8%BF%B4%E5%9C%88"><span class="toc-number">4.</span> <span class="toc-text">條件判斷與迴圈</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A2%9D%E4%BB%B6%E5%88%A4%E6%96%B7"><span class="toc-number">4.1.</span> <span class="toc-text">條件判斷</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#IF"><span class="toc-number">4.1.1.</span> <span class="toc-text">IF</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IF-%E2%80%A6-ELSE"><span class="toc-number">4.1.2.</span> <span class="toc-text">IF … ELSE</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ELSE-IF"><span class="toc-number">4.1.3.</span> <span class="toc-text">ELSE IF</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SWITCH"><span class="toc-number">4.1.4.</span> <span class="toc-text">SWITCH</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%B4%E5%9C%88"><span class="toc-number">4.2.</span> <span class="toc-text">迴圈</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#FOR"><span class="toc-number">4.2.1.</span> <span class="toc-text">FOR</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WHILE"><span class="toc-number">4.2.2.</span> <span class="toc-text">WHILE</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DO-%E2%80%A6-WHILE"><span class="toc-number">4.2.3.</span> <span class="toc-text">DO … WHILE</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%B4%E5%9C%88%E6%8E%A7%E5%88%B6%E6%8C%87%E4%BB%A4"><span class="toc-number">4.2.4.</span> <span class="toc-text">迴圈控制指令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#CONTINUE"><span class="toc-number">4.2.4.1.</span> <span class="toc-text">CONTINUE</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#BREAK"><span class="toc-number">4.2.4.2.</span> <span class="toc-text">BREAK</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BF%92%E9%A1%8C-2"><span class="toc-number">4.3.</span> <span class="toc-text">習題</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%99%A3%E5%88%97"><span class="toc-number">5.</span> <span class="toc-text">陣列</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E7%B6%AD%E9%99%A3%E5%88%97"><span class="toc-number">5.1.</span> <span class="toc-text">一維陣列</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E7%B6%AD%E9%99%A3%E5%88%97"><span class="toc-number">5.2.</span> <span class="toc-text">二維陣列</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A8%AA%E5%95%8F%E9%99%A3%E5%88%97"><span class="toc-number">5.3.</span> <span class="toc-text">訪問陣列</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B0%A3%E6%B3%A1%E6%8E%92%E5%BA%8F%E6%B3%95-%E6%A6%82%E5%BF%B5"><span class="toc-number">5.4.</span> <span class="toc-text">氣泡排序法 - 概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B7%B4%E7%BF%92%E9%A1%8C"><span class="toc-number">5.5.</span> <span class="toc-text">練習題</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/03/28/cpp-basis/" title="C++基礎教學"><img data-lazy-src="https://i.imgur.com/6v5n5dm.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C++基礎教學"/></a><div class="content"><a class="title" href="/2021/03/28/cpp-basis/" title="C++基礎教學">C++基礎教學</a><time datetime="2021-03-28T15:02:35.000Z" title="發表於 2021-03-28 23:02:35">2021-03-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/03/28/%E6%8B%89%E5%A1%9E%E7%A6%8F%E6%95%A3%E5%B0%84/" title="拉塞福散射"><img data-lazy-src="https://i.imgur.com/4jjqB7L.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="拉塞福散射"/></a><div class="content"><a class="title" href="/2021/03/28/%E6%8B%89%E5%A1%9E%E7%A6%8F%E6%95%A3%E5%B0%84/" title="拉塞福散射">拉塞福散射</a><time datetime="2021-03-28T08:45:55.000Z" title="發表於 2021-03-28 16:45:55">2021-03-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/03/28/%E8%BF%91%E7%A8%8B%E8%A6%8F%E5%8A%83%E3%80%81%E7%94%9F%E6%B4%BB%E9%87%8D%E5%BF%83/" title="近程規劃、生活重心"><img data-lazy-src="https://images.anime-pictures.net/84d/84d451e477362d43a8d3f86c696b04e6.png?if=ANIME-PICTURES.NET_-_698151-2667x2000-original-shiokazunoko-single-blush-looking+at+viewer-short+hair.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="近程規劃、生活重心"/></a><div class="content"><a class="title" href="/2021/03/28/%E8%BF%91%E7%A8%8B%E8%A6%8F%E5%8A%83%E3%80%81%E7%94%9F%E6%B4%BB%E9%87%8D%E5%BF%83/" title="近程規劃、生活重心">近程規劃、生活重心</a><time datetime="2021-03-27T16:00:00.000Z" title="發表於 2021-03-28 00:00:00">2021-03-28</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://i.imgur.com/6v5n5dm.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By LJH-coding</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主題 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="閱讀模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="淺色和深色模式轉換"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="單欄和雙欄切換"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="設定"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目錄"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到頂部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/fireworks.min.js"></script><script id="canvas_nest" defer="defer" color="152,245,255" opacity="0.7" zIndex="-1" count="99" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hibiki.model.json"},"display":{"position":"right","width":200,"height":500},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body></html><script type="text/javascript" src="/js/crash_cheat.js"></script>
