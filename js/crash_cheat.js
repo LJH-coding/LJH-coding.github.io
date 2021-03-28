@@ -1,4 +1,4 @@
-<!--崩溃欺骗-->
+<!-- 崩溃欺骗 + OriginTitle -->
  var OriginTitle = document.title;
  var titleTime;
  document.addEventListener('visibilitychange', function () {
