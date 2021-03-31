@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="zh-TW" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>TIOJ 1291 G. N箱M球 | LJH-code</title><meta name="keywords" content="DP"><meta name="author" content="LJH-code"><meta name="copyright" content="LJH-code"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="TIOJ 1291 G. N箱M球題目敘述n 個相同的箱子要放入 m 個不同的球，問有幾種放法。 題解用dp求解定義dp[i][j]為i個箱子放j顆球且每個箱子至少有1顆球的排法數這樣答案就會是$\sum_{i&#x3D;1}^n dp_{i,m}$接著就是想狀態轉移方程放i箱j-1球加一球可以放在箱子的任何位置,也就是i種可能性但也有可能前j-1球只放在前i-1箱中,則第j球獨立放在一箱得轉移方程式為$d">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TIOJ 1291 G. N箱M球">
-<meta property="og:url" content="https://ljh-coding.github.io/2021/03/29/TIOJ-1291/index.html">
+<meta property="og:url" content="https://ljh-coding.github.io/2021/03/29/TIOJ-1291/">
 <meta property="og:site_name" content="LJH-code">
 <meta property="og:description" content="TIOJ 1291 G. N箱M球題目敘述n 個相同的箱子要放入 m 個不同的球，問有幾種放法。 題解用dp求解定義dp[i][j]為i個箱子放j顆球且每個箱子至少有1顆球的排法數這樣答案就會是$\sum_{i&#x3D;1}^n dp_{i,m}$接著就是想狀態轉移方程放i箱j-1球加一球可以放在箱子的任何位置,也就是i種可能性但也有可能前j-1球只放在前i-1箱中,則第j球獨立放在一箱得轉移方程式為$d">
 <meta property="og:locale" content="zh_TW">
